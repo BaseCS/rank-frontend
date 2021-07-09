@@ -43,7 +43,6 @@ export default function ControlPanel() {
         md:overflow-scroll
         divide-gray-200 
         divide-y-2
-        
     `
 
     return(

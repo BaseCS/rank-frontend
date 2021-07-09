@@ -11,17 +11,18 @@ export default function Home() {
         flex-row 
         items-center 
         bg-blue-50
-        fixed
         top-0
+        fixed
+        z-50
     `;
     const contentClasses = `
         overflow-scroll
         md:overflow-hidden
-        mt-16
         w-screen 
         flex 
         flex-col 
         md:flex-row 
+        bg-red-500
     `;
     const sidebarClasses = `
         lg:w-2/5  
@@ -48,7 +49,7 @@ export default function Home() {
             <div id="header" className={headerClasses}>
                 <Authentication/>
             </div>
-            <div id="content" className={contentClasses}>
+            <div id="content" className={contentClasses} style={{height: "calc(100vh - 4rem)"}}>
                 <div id="sidebar" className={sidebarClasses}>                        
                     <ControlPanel/>
                 </div>
@@ -56,11 +57,11 @@ export default function Home() {
                     
                 </div>
             </div>
-            <style jsx>{`
+            {/* <style jsx>{`
                 #content {
-                    height: calc(100vh - 4rem);
+                    height: calc(100vh - 8rem);
                 }
-            `}</style>
+            `}</style> */}
         </>
     );
 }
