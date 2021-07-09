@@ -131,12 +131,16 @@ export default function RangeFilter(props) {
     useEffect(() => {
         // Executes on every window resize. 
         // Event listener reattached when current selection has changed.
-        reposition();
         window.addEventListener("resize", reposition);
         return () => {
             window.removeEventListener("resize", reposition);
         }
     }, [selected]);
+
+    useEffect(() => {
+        // Executes once
+        reposition();
+    }, []);
 
     let scaleUI = [];
     for(let i = 0; i < range + 2; i++) {

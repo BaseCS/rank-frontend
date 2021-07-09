@@ -36,11 +36,11 @@ export default function ControlPanel() {
     }
 
     const panelClasses = `
-        md:h-full
+        h-full
+        overflow-scroll
         md:space-y-4
         md:divide-y-0
         md:p-4
-        md:overflow-scroll
         divide-gray-200 
         divide-y-2
     `
