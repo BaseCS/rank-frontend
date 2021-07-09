@@ -14,10 +14,10 @@ export default function Disclosure(props) {
         max-w-full
         md:rounded 
         overflow-hidden 
-        text-gray-500 
         bg-gray-50
     `;
     const headerClasses = `
+        text-gray-500 
         hover:text-green-400
         group
         font-semibold
@@ -49,6 +49,7 @@ export default function Disclosure(props) {
         px-3 
         pt-3 
         md:pt-0
+        text-gray-400
     `;
     const borderClasses = `
         bg-gray-200 mb-3 
@@ -59,7 +60,6 @@ export default function Disclosure(props) {
     `;
     const subtitleClasses = `
         text-sm 
-        text-gray-400 
         mb-3
     `;
 

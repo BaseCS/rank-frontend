@@ -129,17 +129,14 @@ export default function RangeFilter(props) {
     }
 
     useEffect(() => {
-        // Executes on every window resize, updating when current selection has changed
+        // Executes on every window resize. 
+        // Event listener reattached when current selection has changed.
+        reposition();
         window.addEventListener("resize", reposition);
         return () => {
             window.removeEventListener("resize", reposition);
         }
     }, [selected]);
-
-    useEffect(() => {
-        // Executes once when slide component has successfully mounted
-        reposition();
-    }, []);
 
     let scaleUI = [];
     for(let i = 0; i < range + 2; i++) {
@@ -158,18 +155,19 @@ export default function RangeFilter(props) {
         w-full 
         justify-center 
         items-center 
-        text-gray-400
         mb-3
         h-6
     `;
     const bracketsClasses = `
+        leading-none
+        h-6
         text-xl  
         font-medium
     `;
     const readoutClasses = `
-        text-2xl 
+        text-xl 
         text-green-500 
-        font-medium 
+        font-semibold
         mx-2
     `;
     const trackWrapperClasses = `
@@ -296,7 +294,7 @@ export default function RangeFilter(props) {
                     {scaleUI}
                 </div>
             </div>
-            <div className="flex flex-row text-sm text-gray-400">
+            <div className="flex flex-row text-sm">
                 <p className="flex-grow text-left">
                     {props.bounds.start}
                 </p>

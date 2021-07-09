@@ -35,35 +35,55 @@ export default function ControlPanel() {
         setCountries(result);
     }
 
+    const panelClasses = `
+        md:h-full
+        md:space-y-4
+        md:divide-y-0
+        md:p-4
+        md:overflow-scroll
+        divide-gray-200 
+        divide-y-2
+        
+    `
+
     return(
         <>
-            <Disclosure 
-            title="Show institutions by location"
-            subtitle="Filter world institutions by geography."
-            show={true}>
-                <CountryFilter tags={countryList} selected={countriesSelected} onUpdate={countriesUpdate}/>
-            </Disclosure>
+            <div id="control-panel" className={panelClasses}>
+                <Disclosure 
+                title="Show institutions by location"
+                subtitle="Filter world institutions by geography."
+                show={true}>
+                    <CountryFilter tags={countryList} selected={countriesSelected} onUpdate={countriesUpdate}/>
+                </Disclosure>
 
-            <Disclosure 
-            title="Publication year range"
-            subtitle="Only consider research publications within this time period (inclusive)."
-            show={true}>
-                <RangeFilter bounds={rangeBounds} selected={rangeSelected} onUpdate={rangeUpdate}></RangeFilter>
-            </Disclosure>
+                <Disclosure 
+                title="Publication year range"
+                subtitle="Only consider research publications within this time period (inclusive)."
+                show={true}>
+                    <RangeFilter bounds={rangeBounds} selected={rangeSelected} onUpdate={rangeUpdate}></RangeFilter>
+                </Disclosure>
 
-            <Disclosure 
-            title="Include by categories"
-            subtitle="Only consider publications that have been tagged with the following categories."
-            show={true}>
-                <TagBank collapsible={false} show={true} title="Hover to see full category" type="tag" tags={tagList} selected={tagsSelected} onUpdate={tagsUpdate}></TagBank>
-            </Disclosure>
+                <Disclosure 
+                title="Include by categories"
+                subtitle="Only consider publications that have been tagged with the following categories."
+                show={true}>
+                    <TagBank collapsible={false} show={true} title="Hover to see full category" type="tag" tags={tagList} selected={tagsSelected} onUpdate={tagsUpdate}></TagBank>
+                </Disclosure>
 
-            <Disclosure 
-            title="Include by conferences"
-            subtitle="Only consider publications that were included in the following conferences."
-            show={true}>
-                <p>Hello world</p>
-            </Disclosure>
+                <Disclosure 
+                title="Include by conferences"
+                subtitle="Only consider publications that were included in the following conferences."
+                show={true}>
+                    <p>Hello world</p>
+                </Disclosure>
+            </div>
+            <style jsx>{`
+                @media only screen and (min-width: 768px) {
+                    #control-panel {
+                        // height: calc(100% - 1rem);
+                    }
+                }
+            `}</style>
         </>
     );
 }

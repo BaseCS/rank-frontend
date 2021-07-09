@@ -51,7 +51,7 @@ export default function TagBank(props) {
         active:brightness-90
         shadow-md
         rounded 
-        px-3
+        px-2
     `;
     const showButtonClasses = `
         bg-gray-200
@@ -74,7 +74,6 @@ export default function TagBank(props) {
         overflow-hidden
     `;
     const defaultNameClasses = `
-        text-gray-400
         font-semibold
         h-6
         overflow-hidden
@@ -85,7 +84,6 @@ export default function TagBank(props) {
         cursor-pointer
         filter
         active:brightness-90
-        text-gray-400
         font-semibold
         h-6
         overflow-hidden
@@ -99,7 +97,7 @@ export default function TagBank(props) {
             <div className="h-6 -mt-6 flex flex-row justify-end">
                 <div className="h-6 w-6 bg-gradient-to-l from-gray-50"></div>
                 <div className="flex flex-row items-center space-x-2 bg-gray-50 pl-2">
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-sm">
                         <span className={"font-semibold " + (count > 0 ? "text-green-500" : "text-red-400")}>{count}</span> / {props.tags.length}
                     </div>
                     <button onClick={selectAll} className={buttonClasses} title="select all">All</button>

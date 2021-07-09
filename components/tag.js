@@ -40,9 +40,9 @@ export default function Tag(props) {
         mr-1
         filter
         active:brightness-90
-        hover:bg-green-400
-        hover:text-white
         group
+        hover:ring-2
+        hover:ring-green-500
     `;
     const layoutClasses = `
         flex 
@@ -59,7 +59,6 @@ export default function Tag(props) {
         bg-white 
         rounded-sm 
         mr-2
-        group-hover:text-green-400
         overflow-hidden
     `;
     const labelClasses = `
