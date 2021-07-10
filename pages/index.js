@@ -17,9 +17,11 @@ export default function Home() {
     useEffect(() => {
         resize()
         // Executes on every window resize. 
-        window.addEventListener("resize", resize);
+        window.addEventListener("resize", resize, false);
+        window.addEventListener("orientationchange", resize, false);
         return () => {
             window.removeEventListener("resize", resize);
+            window.removeEventListener("orientationchange", resize);
         }
     }, []);
 
