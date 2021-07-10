@@ -18,7 +18,7 @@ export default function Disclosure(props) {
     `;
     const headerClasses = `
         text-gray-500 
-        hover:text-green-400
+        hover:text-green-500
         group
         font-semibold
         p-3 
@@ -33,7 +33,7 @@ export default function Disclosure(props) {
     const iconWrapperClasses = `
         rounded-full
         bg-gray-200
-        group-hover:bg-green-400
+        group-hover:bg-green-500
         group-hover:text-white
         group-hover:shadow-md
         h-6 
@@ -49,16 +49,18 @@ export default function Disclosure(props) {
         px-3 
         pt-3 
         md:pt-0
-        text-gray-400
+        text-gray-500
     `;
     const borderClasses = `
-        bg-gray-200 mb-3 
+        bg-gray-200 
+        mb-3 
         h-0.5 
         w-full 
         hidden 
         md:block
     `;
     const subtitleClasses = `
+        text-gray-400
         text-sm 
         mb-3
     `;

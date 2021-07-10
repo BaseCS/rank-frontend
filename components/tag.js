@@ -39,7 +39,7 @@ export default function Tag(props) {
         mr-1
         filter
         active:brightness-90
-        hover:text-green-400
+        hover:text-green-500
         hover:shadow-md
         group
     `;

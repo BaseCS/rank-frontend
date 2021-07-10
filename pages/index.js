@@ -73,11 +73,7 @@ export default function Home() {
                 </div>
             </div>
             <style jsx>{`
-                html {
-                    overscroll-behavior-y: none;
-                }
-
-                body {
+                html, body, #content {
                     overscroll-behavior-y: none;
                 }
             `}</style>

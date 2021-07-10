@@ -46,7 +46,7 @@ export default function TagBank(props) {
         bg-gray-500
         text-white
         filter
-        hover:bg-green-400
+        hover:bg-green-500
         hover:text-white
         active:brightness-90
         hover:shadow-md
@@ -57,7 +57,7 @@ export default function TagBank(props) {
         bg-gray-200
         text-gray-500
         filter
-        hover:bg-green-400
+        hover:bg-green-500
         hover:text-white
         active:brightness-90
         hover:shadow-md
@@ -79,7 +79,7 @@ export default function TagBank(props) {
         overflow-hidden
     `;
     const defaultNameCollapsibleClasses = `
-        hover:text-green-400
+        hover:text-green-500
         select-none
         cursor-pointer
         filter
@@ -97,7 +97,7 @@ export default function TagBank(props) {
             <div className="h-6 -mt-6 flex flex-row justify-end">
                 <div className="h-6 w-6 bg-gradient-to-l from-gray-50"></div>
                 <div className="flex flex-row items-center space-x-2 bg-gray-50 pl-2">
-                    <div className="text-sm">
+                    <div className="text-sm text-gray-400">
                         <span className={"font-semibold " + (count > 0 ? "text-green-500" : "text-red-400")}>{count}</span> / {props.tags.length}
                     </div>
                     <button onClick={selectAll} className={buttonClasses} title="select all">All</button>

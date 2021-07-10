@@ -178,20 +178,20 @@ export default function RangeFilter(props) {
         px-4 
         bg-gray-100 
         rounded
+        mb-2
     `;
     const trackMainClasses = `
         track 
         relative 
         w-full 
         h-4 
-        bg-gray-200 
-        mb-1 
+        bg-gray-200  
     `;
     const handleClasses = `
         h-6 
         w-4 
         bg-green-500 
-        hover:bg-green-400
+        hover:text-white
         filter
         active:brightness-90
         cursor-pointer
@@ -223,7 +223,7 @@ export default function RangeFilter(props) {
         bg-gray-500
         text-white
         filter
-        hover:bg-green-400
+        hover:bg-green-500
         hover:text-white
         active:brightness-90
         hover:shadow-md
@@ -296,7 +296,7 @@ export default function RangeFilter(props) {
                     {scaleUI}
                 </div>
             </div>
-            <div className="flex flex-row text-sm">
+            <div className="flex flex-row text-sm text-gray-400">
                 <p className="flex-grow text-left">
                     {props.bounds.start}
                 </p>
