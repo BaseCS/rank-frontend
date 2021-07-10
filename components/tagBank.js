@@ -49,7 +49,7 @@ export default function TagBank(props) {
         hover:bg-green-400
         hover:text-white
         active:brightness-90
-        shadow-md
+        hover:shadow-md
         rounded 
         px-2
     `;

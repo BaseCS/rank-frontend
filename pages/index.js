@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import Head from "next/head";
 import ControlPanel from "../components/controlPanel";
 import Authentication from "../components/authentication";
 
@@ -42,6 +43,7 @@ export default function Home() {
         flex 
         flex-col 
         md:flex-row 
+        overscroll-none
     `;
     const sidebarClasses = `
         lg:w-2/5  
@@ -54,6 +56,9 @@ export default function Home() {
 
     return(
         <>
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            </Head>
             <div ref={header} id="header" className={headerClasses}>
                 <Authentication/>
             </div>

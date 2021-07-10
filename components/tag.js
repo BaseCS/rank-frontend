@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HiTag } from "react-icons/hi";
-import { FaGlobeAmericas } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 
 export default function Tag(props) {
@@ -40,9 +39,9 @@ export default function Tag(props) {
         mr-1
         filter
         active:brightness-90
+        hover:text-green-400
+        hover:shadow-md
         group
-        hover:ring-2
-        hover:ring-green-500
     `;
     const layoutClasses = `
         flex 
@@ -67,7 +66,7 @@ export default function Tag(props) {
     `;
 
     return(
-        <button title={props.content.name} className={wrapperClasses + (props.active ? "bg-green-500 shadow-md" : "")} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
+        <button title={props.content.name} className={wrapperClasses + (props.active ? "bg-green-500" : "")} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
             <div className={layoutClasses}>
                 <div className={iconClasses + (props.active ? "text-green-500" : "")}>
                     {icon}

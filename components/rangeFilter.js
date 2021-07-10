@@ -194,7 +194,6 @@ export default function RangeFilter(props) {
         hover:bg-green-400
         filter
         active:brightness-90
-        shadow-md 
         cursor-pointer
         transform
         -translate-y-1
@@ -203,6 +202,7 @@ export default function RangeFilter(props) {
         items-center
         justify-center
         text-green-300
+        hover:shadow-md
     `;
     const trackFillClasses = `
         h-full 
@@ -210,7 +210,6 @@ export default function RangeFilter(props) {
         bg-green-400 
         opacity-50
         absolute
-        shadow-md
     `;
     const scaleClasses = `
         flex 
@@ -232,7 +231,6 @@ export default function RangeFilter(props) {
         w-6 
         rounded 
         text-center
-        shadow-md
     `;
 
     return(
