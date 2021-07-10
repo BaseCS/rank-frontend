@@ -23,15 +23,6 @@ export default function Home() {
         }
     }, []);
 
-    useEffect(() => {
-        resize()
-        // Executes on every touch start. 
-        window.addEventListener("touchstart", resize);
-        return () => {
-            window.removeEventListener("touchstart", resize);
-        }
-    }, []);
-
     const headerClasses = `
         md:pl-4 
         w-screen 
@@ -56,7 +47,8 @@ export default function Home() {
     `;
     const sidebarClasses = `
         lg:w-2/5  
-        md:w-1/2 
+        md:w-1/2
+        md:pl-4
     `;
     const listViewClasses = `
         md:w-1/2 
@@ -76,20 +68,9 @@ export default function Home() {
                     <ControlPanel/>
                 </div>
                 <div id="listView" className={listViewClasses}>
-                    
+                    <ControlPanel/>
                 </div>
             </div>
-            <style jsx>{`
-                html {
-                    overflow: hidden;
-                    height: 100%;
-                }
-
-                body {
-                    height: 100%;
-                    overflow: auto;
-                }
-            `}</style>
         </>
     );
 }

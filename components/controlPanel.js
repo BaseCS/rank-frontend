@@ -41,6 +41,7 @@ export default function ControlPanel() {
         md:space-y-4
         md:divide-y-0
         md:p-4
+        md:pl-0
         divide-gray-200 
         divide-y-2
     `
