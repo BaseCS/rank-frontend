@@ -72,6 +72,15 @@ export default function Home() {
                     <ControlPanel/>
                 </div>
             </div>
+            <style jsx>{`
+                html {
+                    overscroll-behavior-y: none;
+                }
+
+                body {
+                    overscroll-behavior-y: none;
+                }
+            `}</style>
         </>
     );
 }
