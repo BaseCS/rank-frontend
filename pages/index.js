@@ -36,6 +36,7 @@ export default function Home() {
         h-16
     `;
     const contentClasses = `
+        fixed
         overflow-scroll
         md:overflow-hidden
         mt-16
