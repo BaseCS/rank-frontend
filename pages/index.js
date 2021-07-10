@@ -23,6 +23,15 @@ export default function Home() {
         }
     }, []);
 
+    useEffect(() => {
+        resize()
+        // Executes on every touch start. 
+        window.addEventListener("touchstart", resize);
+        return () => {
+            window.removeEventListener("touchstart", resize);
+        }
+    }, []);
+
     const headerClasses = `
         md:pl-4 
         w-screen 
@@ -70,6 +79,17 @@ export default function Home() {
                     
                 </div>
             </div>
+            <style jsx>{`
+                html {
+                    overflow: hidden;
+                    height: 100%;
+                }
+
+                body {
+                    height: 100%;
+                    overflow: auto;
+                }
+            `}</style>
         </>
     );
 }
