@@ -36,8 +36,6 @@ export default function ControlPanel() {
     }
 
     const panelClasses = `
-        md:h-full
-        md:overflow-scroll
         md:space-y-4
         md:divide-y-0
         md:p-4

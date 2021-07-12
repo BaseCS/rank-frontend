@@ -32,7 +32,6 @@ export default function Disclosure(props) {
     `;
     const iconWrapperClasses = `
         rounded-full
-        bg-gray-200
         group-hover:bg-green-500
         group-hover:text-white
         group-hover:shadow-md

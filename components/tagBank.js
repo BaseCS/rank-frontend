@@ -54,7 +54,6 @@ export default function TagBank(props) {
         px-2
     `;
     const showButtonClasses = `
-        bg-gray-200
         text-gray-500
         filter
         hover:bg-green-500

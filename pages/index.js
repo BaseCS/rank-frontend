@@ -8,22 +8,20 @@ export default function Home() {
     const header = useRef();
     const content = useRef();
 
-    function resize() {
-        let headerHeight = header.current.offsetHeight;
-        let windowHeight = window.innerHeight;
-        content.current.style.height = (windowHeight - headerHeight) + "px";
-    }
+    // function resize() {
+    //     let headerHeight = header.current.offsetHeight;
+    //     let windowHeight = window.innerHeight;
+    //     content.current.style.height = (windowHeight - headerHeight) + "px";
+    // }
 
-    useEffect(() => {
-        resize()
-        // Executes on every window resize. 
-        window.addEventListener("resize", resize, false);
-        window.addEventListener("orientationchange", resize, false);
-        return () => {
-            window.removeEventListener("resize", resize);
-            window.removeEventListener("orientationchange", resize);
-        }
-    }, []);
+    // useEffect(() => {
+    //     resize()
+    //     // Executes on every window resize. 
+    //     window.addEventListener("resize", resize, false);
+    //     return () => {
+    //         window.removeEventListener("resize", resize);
+    //     }
+    // }, []);
 
     const headerClasses = `
         md:pl-4 
@@ -52,8 +50,10 @@ export default function Home() {
         lg:w-2/5  
         md:w-1/2
         md:pl-4
+        md:overflow-scroll
     `;
     const listViewClasses = `
+        md:overflow-scroll
         md:w-1/2 
         lg:w-3/5 
     `;
@@ -77,6 +77,10 @@ export default function Home() {
             <style jsx>{`
                 html, body, #content {
                     overscroll-behavior-y: none;
+                }
+
+                #content {
+                    height: calc(100% - 4rem);
                 }
             `}</style>
         </>
