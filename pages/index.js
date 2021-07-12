@@ -54,6 +54,11 @@ export default function Home() {
         -mt-16
     `;
     const listViewClasses = `
+        md:overflow-scroll
+        md:fixed
+        h-full
+        md:pt-16
+        md:-mt-16
     `;
 
     return(
@@ -80,6 +85,7 @@ export default function Home() {
 
                     #listView {
                         margin-left: calc(400px - 1rem);
+                        width: calc(100% - (400px - 1rem));
                     }
                 }
 
@@ -90,6 +96,7 @@ export default function Home() {
 
                     #listView {
                         margin-left: calc(500px - 1rem);
+                        width: calc(100% - (500px - 1rem));
                     }
                 }
             `}</style>
