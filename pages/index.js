@@ -54,11 +54,6 @@ export default function Home() {
         -mt-16
     `;
     const listViewClasses = `
-        md:overflow-scroll
-        md:fixed
-        h-full
-        md:pt-16
-        md:-mt-16
     `;
 
     return(
