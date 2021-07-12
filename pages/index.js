@@ -33,10 +33,10 @@ export default function Home() {
         fixed
         z-50
         h-16
-        bg-opacity-90
-        text-white
+        bg-opacity-0
+        text-gray-500
         backdrop-filter
-        backdrop-blur
+        backdrop-blur-xl
     `;
     const contentClasses = `
         pt-16
@@ -49,7 +49,9 @@ export default function Home() {
         md:pl-4
         md:overflow-scroll
         md:fixed
-        md:h-full
+        h-full
+        pt-16
+        -mt-16
     `;
     const listViewClasses = `
     `;
@@ -71,18 +73,13 @@ export default function Home() {
                 </div>
             </div>
             <style jsx>{`
-                #sidebar {
-                    padding-top: 4rem;
-                    margin-top: -4rem;
-                }
-
                 @media (min-width: 768px) {
                     #sidebar {
                         width: calc(400px - 1rem);
                     }
 
                     #listView {
-                        margin-left: 24rem;
+                        margin-left: calc(400px - 1rem);
                     }
                 }
 
