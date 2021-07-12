@@ -65,7 +65,7 @@ export default function ControlPanel() {
                 title="Include by categories"
                 subtitle="Only consider publications that have been tagged with the following categories."
                 show={true}>
-                    <TagBank collapsible={false} show={true} title="Hover to see full category" type="tag" tags={tagList} selected={tagsSelected} onUpdate={tagsUpdate}></TagBank>
+                    <TagBank collapsible={false} show={true} title="Available tags" type="tag" tags={tagList} selected={tagsSelected} onUpdate={tagsUpdate}></TagBank>
                 </Disclosure>
 
                 <Disclosure 

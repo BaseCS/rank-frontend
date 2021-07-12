@@ -24,37 +24,34 @@ export default function Home() {
     // }, []);
 
     const headerClasses = `
-        md:pl-4 
         w-screen 
         flex 
         flex-row 
         items-center 
-        bg-blue-50
+        bg-black
         top-0
         fixed
         z-50
         h-16
+        bg-opacity-90
+        text-white
+        backdrop-filter
+        backdrop-blur
     `;
     const contentClasses = `
-        overflow-scroll
-        md:overflow-hidden
-        mt-16
+        pt-16
         w-full 
         flex 
         flex-col 
         md:flex-row 
-        overscroll-none
     `;
     const sidebarClasses = `
-        lg:w-2/5  
-        md:w-1/2
         md:pl-4
         md:overflow-scroll
+        md:fixed
+        md:h-full
     `;
     const listViewClasses = `
-        md:overflow-scroll
-        md:w-1/2 
-        lg:w-3/5 
     `;
 
     return(
@@ -74,8 +71,29 @@ export default function Home() {
                 </div>
             </div>
             <style jsx>{`
-                #content {
-                    height: calc(100% - 4rem);
+                #sidebar {
+                    padding-top: 4rem;
+                    margin-top: -4rem;
+                }
+
+                @media (min-width: 768px) {
+                    #sidebar {
+                        width: calc(400px - 1rem);
+                    }
+
+                    #listView {
+                        margin-left: 24rem;
+                    }
+                }
+
+                @media (min-width: 1024px) {
+                    #sidebar {
+                        width: calc(500px - 1rem);
+                    }
+
+                    #listView {
+                        margin-left: calc(500px - 1rem);
+                    }
                 }
             `}</style>
         </>

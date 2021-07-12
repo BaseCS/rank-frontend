@@ -21,7 +21,7 @@ export default function Disclosure(props) {
         hover:text-green-500
         group
         font-semibold
-        p-3 
+        p-4 
         flex 
         flex-row 
         text-left 
@@ -44,9 +44,9 @@ export default function Disclosure(props) {
         w-full
     `;
     const contentClasses = `
-        pb-3 
-        px-3 
-        pt-3 
+        pb-4 
+        px-4 
+        pt-4 
         md:pt-0
         text-gray-500
     `;
