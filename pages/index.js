@@ -36,7 +36,6 @@ export default function Home() {
         h-16
     `;
     const contentClasses = `
-        fixed
         overflow-scroll
         md:overflow-hidden
         mt-16
@@ -75,10 +74,6 @@ export default function Home() {
                 </div>
             </div>
             <style jsx>{`
-                html, body, #content {
-                    overscroll-behavior-y: none;
-                }
-
                 #content {
                     height: calc(100% - 4rem);
                 }
