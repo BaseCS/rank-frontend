@@ -46,7 +46,7 @@ export default function Home() {
         md:flex-row 
     `;
     const sidebarClasses = `
-        md:pl-4
+        md:pl-3
         md:overflow-scroll
         md:fixed
         h-full
@@ -75,23 +75,23 @@ export default function Home() {
             <style jsx>{`
                 @media (min-width: 768px) {
                     #sidebar {
-                        width: calc(400px - 1rem);
+                        width: calc(380px - 0.75rem);
                     }
 
                     #listView {
-                        margin-left: calc(400px - 1rem);
-                        width: calc(100% - (400px - 1rem));
+                        margin-left: calc(380px - 0.75rem);
+                        width: calc(100% - (380px - 0.75rem));
                     }
                 }
 
                 @media (min-width: 1024px) {
                     #sidebar {
-                        width: calc(500px - 1rem);
+                        width: calc(500px - 0.75rem);
                     }
 
                     #listView {
-                        margin-left: calc(500px - 1rem);
-                        width: calc(100% - (500px - 1rem));
+                        margin-left: calc(500px - 0.75rem);
+                        width: calc(100% - (500px - 0.75rem));
                     }
                 }
             `}</style>

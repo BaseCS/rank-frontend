@@ -36,9 +36,9 @@ export default function ControlPanel() {
     }
 
     const panelClasses = `
-        md:space-y-4
+        md:space-y-3
         md:divide-y-0
-        md:p-4
+        md:p-3
         md:pl-0
         divide-gray-200 
         divide-y-2
@@ -75,13 +75,6 @@ export default function ControlPanel() {
                     <p>Hello world</p>
                 </Disclosure>
             </div>
-            <style jsx>{`
-                @media only screen and (min-width: 768px) {
-                    #control-panel {
-                        // height: calc(100% - 1rem);
-                    }
-                }
-            `}</style>
         </>
     );
 }

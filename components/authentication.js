@@ -11,7 +11,7 @@ export default function Authentication() {
         flex-row 
         items-center 
         space-x-3
-        px-4
+        px-3
     `;
 
     const buttonClasses = `
