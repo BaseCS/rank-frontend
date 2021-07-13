@@ -5,6 +5,7 @@ import TagBank from "./tagBank";
 import { tagList } from "./extras/tagList";
 import CountryFilter from "./countryFilter";
 import { countryList } from "./extras/countryList";
+import { IoMdRefresh } from "react-icons/io";
 
 export default function ControlPanel() {
     const rangeBounds = {start: 1970, stop: 2021};
@@ -41,20 +42,22 @@ export default function ControlPanel() {
         md:space-y-4
         md:divide-y-0
         md:px-4
-        md:pb-4
+        md:pb-8
         divide-gray-200 
         divide-y-2
     `
 
-    const submitClasses = `
+    const headerClasses = `
         fixed
         h-16
         w-full
         z-50
         backdrop-filter
-        backdrop-blur-xl
+        backdrop-blur
+        bg-white
+        bg-opacity-80
         px-4
-        md:px-7
+        md:pl-7
         flex
         items-center
         border-t
@@ -73,15 +76,28 @@ export default function ControlPanel() {
         hover:shadow-md
         filter
         active:brightness-90
+        font-semibold
+        flex
+        flex-row
+        items-center
+    `;
+
+    const iconClasses = `
+        ml-3
+        h-6
+        w-6
     `;
 
     return(
         <>
-            <div id="controlSubmit" className={submitClasses}>
+            <div id="controlSubmit" className={headerClasses}>
                 <p className="flex-grow">
-                    Show institutions by location
+                    Filter options
                 </p>
-                <button className={buttonClasses}>Apply</button>
+                <button id="submitButton" className={buttonClasses} title="apply selected filter options">
+                    Apply
+                    <div id="submitIcon" className={iconClasses}><IoMdRefresh className="h-6 w-6"/></div>
+                </button>
             </div>
             <div id="controlPanel" className={panelClasses}>
                 <Disclosure 
@@ -121,7 +137,20 @@ export default function ControlPanel() {
 
                 @media (min-width: 1024px) {
                     #controlSubmit {
-                        width: calc(500px - 0.75rem);
+                        width: calc(480px - 0.75rem);
+                    }
+                }
+
+                #submitButton:hover #submitIcon {
+                    animation: 1s infinite linear spin;
+                }
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg)
+                    }
+                    to {
+                        transform: rotate(360deg)
                     }
                 }
             `}</style>

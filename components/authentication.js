@@ -12,11 +12,11 @@ export default function Authentication() {
         items-center 
         space-x-3
         px-4
-        md:px-7
+        md:pl-7
     `;
 
     const buttonClasses = `
-        h-10 
+        h-8 
         px-3 
         rounded 
         text-white

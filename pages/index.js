@@ -1,6 +1,7 @@
 import Head from "next/head";
-import ControlPanel from "../components/controlPanel";
 import Authentication from "../components/authentication";
+import ControlPanel from "../components/controlPanel";
+import ListPanel from "../components/listPanel";
 
 export default function Home() {
 
@@ -49,7 +50,8 @@ export default function Home() {
                     <ControlPanel/>
                 </div>
                 <div id="listView" className={listViewClasses}>
-                    <ControlPanel/>
+                    {/* <ControlPanel/> */}
+                    <ListPanel/>
                 </div>
             </div>
             <style jsx>{`
@@ -67,12 +69,12 @@ export default function Home() {
 
                 @media (min-width: 1024px) {
                     #sidebar {
-                        width: calc(500px - 0.75rem);
+                        width: calc(480px - 0.75rem);
                     }
 
                     #listView {
-                        margin-left: calc(500px - 0.75rem);
-                        width: calc(100% - (500px - 0.75rem));
+                        margin-left: calc(480px - 0.75rem);
+                        width: calc(100% - (480px - 0.75rem));
                     }
                 }
             `}</style>

@@ -30,8 +30,7 @@ export default function Tag(props) {
 
     const wrapperClasses = `
         inline-block 
-        cursor-pointer 
-        bg-gray-200 
+        cursor-pointer  
         h-6 
         px-0.5 
         pr-2 
@@ -66,7 +65,7 @@ export default function Tag(props) {
     `;
 
     return(
-        <button title={props.content.name} className={wrapperClasses + (props.active ? "bg-green-500" : "")} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
+        <button title={props.content.name} className={wrapperClasses + (props.active ? "bg-green-500" : "bg-gray-100")} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
             <div className={layoutClasses}>
                 <div className={iconClasses + (props.active ? "text-green-500" : "")}>
                     {icon}
