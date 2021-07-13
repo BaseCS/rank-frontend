@@ -39,7 +39,7 @@ export default function Home() {
     return(
         <>
             <Head>
-                <title>Hello World</title>
+                <title>Dank Rank</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <div id="header" className={headerClasses}>
