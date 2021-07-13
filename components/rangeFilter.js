@@ -218,6 +218,7 @@ export default function RangeFilter(props) {
         items-center 
         w-full 
         h-1
+        mb-1
     `;
     const buttonClasses = `
         bg-gray-500

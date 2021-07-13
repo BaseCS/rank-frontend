@@ -21,7 +21,9 @@ export default function Disclosure(props) {
         hover:text-green-500
         group
         font-semibold
-        p-3 
+        py-3
+        px-4
+        md:p-3
         flex 
         flex-row 
         text-left 
@@ -45,7 +47,8 @@ export default function Disclosure(props) {
     `;
     const contentClasses = `
         pb-3 
-        px-3 
+        px-4
+        md:px-3 
         pt-3 
         md:pt-0
         text-gray-500
@@ -53,7 +56,7 @@ export default function Disclosure(props) {
     const borderClasses = `
         bg-gray-200 
         mb-3 
-        h-0.5 
+        h-px 
         w-full 
         hidden 
         md:block

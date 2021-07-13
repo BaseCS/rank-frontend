@@ -36,17 +36,54 @@ export default function ControlPanel() {
     }
 
     const panelClasses = `
-        md:space-y-3
+        pt-16
+        md:pt-20
+        md:space-y-4
         md:divide-y-0
-        md:p-3
-        md:pl-0
+        md:px-4
+        md:pb-4
         divide-gray-200 
         divide-y-2
     `
 
+    const submitClasses = `
+        fixed
+        h-16
+        w-full
+        z-50
+        backdrop-filter
+        backdrop-blur-xl
+        px-4
+        md:px-7
+        flex
+        items-center
+        border-t
+        border-b
+        border-gray-200
+        text-gray-500 
+        font-semibold
+    `;
+
+    const buttonClasses = `
+        h-8
+        px-3
+        bg-green-500
+        rounded
+        text-white
+        hover:shadow-md
+        filter
+        active:brightness-90
+    `;
+
     return(
         <>
-            <div id="control-panel" className={panelClasses}>
+            <div id="controlSubmit" className={submitClasses}>
+                <p className="flex-grow">
+                    Show institutions by location
+                </p>
+                <button className={buttonClasses}>Apply</button>
+            </div>
+            <div id="controlPanel" className={panelClasses}>
                 <Disclosure 
                 title="Show institutions by location"
                 subtitle="Filter world institutions by geography."
@@ -75,6 +112,19 @@ export default function ControlPanel() {
                     <p>Hello world</p>
                 </Disclosure>
             </div>
+            <style jsx>{`
+                @media (min-width: 768px) {
+                    #controlSubmit {
+                        width: calc(380px - 0.75rem);
+                    }
+                }
+
+                @media (min-width: 1024px) {
+                    #controlSubmit {
+                        width: calc(500px - 0.75rem);
+                    }
+                }
+            `}</style>
         </>
     );
 }
