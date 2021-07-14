@@ -23,7 +23,8 @@ import {
     FaRobot,
     FaGraduationCap,
     FaPhotoVideo,
-    FaChartLine
+    FaChartLine,
+    FaFileCode
 } from "react-icons/fa";
 import {
     BiNetworkChart
@@ -36,7 +37,6 @@ import {
     RiTimerFill,
     RiTimerFlashFill,
     RiTerminalWindowFill,
-    RiFileCodeFill
 } from "react-icons/ri"
 import {
     IoSpeedometer,
@@ -81,7 +81,7 @@ export const tagList = [
     {id: "retr", name: "information retrieval", icon: <HiSearch/>},
     {id: "rtsys", name: "real-time systems", icon: <RiTimerFill/>},
     {id: "sec", name: "cybersecurity", icon: <FaShieldAlt/>},
-    {id: "seng", name: "software engineering", icon: <RiFileCodeFill/>},
+    {id: "seng", name: "software engineering", icon: <FaFileCode/>},
     {id: "thry", name: "computational theory", icon: <IoChatbubbleEllipses/>},
     {id: "vir", name: "virtualization", icon: <HiDesktopComputer/>},
     {id: "visl", name: "visualization", icon: <HiCubeTransparent/>},

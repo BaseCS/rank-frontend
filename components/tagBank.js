@@ -65,27 +65,22 @@ export default function TagBank(props) {
         rounded-full 
         text-center
     `;
-    const highlightedNameClasses = `
-        text-green-500
-        font-semibold 
-        capitalize
-        h-6
-        overflow-hidden
-    `;
     const defaultNameClasses = `
         font-semibold
         h-6
-        overflow-hidden
+        truncate
+    ` + (props.collapsible ? "mr-48" : "mr-40")
+    ;
+    const highlightedNameClasses = defaultNameClasses + `
+        text-green-500 
+        capitalize
     `;
-    const defaultNameCollapsibleClasses = `
+    const defaultNameCollapsibleClasses = defaultNameClasses + `
         hover:text-green-500
         select-none
         cursor-pointer
         filter
         active:brightness-90
-        font-semibold
-        h-6
-        overflow-hidden
     `;
 
     return(
@@ -94,7 +89,6 @@ export default function TagBank(props) {
                 {displayName}
             </div>
             <div className="h-6 -mt-6 flex flex-row justify-end">
-                <div className="h-6 w-6 bg-gradient-to-l from-gray-50"></div>
                 <div className="flex flex-row items-center space-x-2 bg-gray-50 pl-2">
                     <div className="text-sm text-gray-400">
                         <span className={"font-semibold " + (count > 0 ? "text-green-500" : "text-red-400")}>{count}</span> / {props.tags.length}

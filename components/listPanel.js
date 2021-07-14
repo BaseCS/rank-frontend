@@ -21,14 +21,11 @@ export default function ListPanel(props) {
         md:pr-4
         z-50
     `;
-
     const titleClasses = `
         flex-grow
     `;
-
     const fieldClasses = `
         field
-        w-auto
         text-center
         truncate
     `;
@@ -36,11 +33,11 @@ export default function ListPanel(props) {
     return(
         <>
             <div id="listHeader" className={headerClasses}>
-                <p className="w-12 text-center flex-shrink-0 text-green-500">#</p>
+                <p className={fieldClasses + " text-green-500"} title="rank and calculated score">#</p>
                 <p className={titleClasses}>Institution</p>
-                <p className={fieldClasses} title="research publication count">Pubs.</p>
-                <p className={fieldClasses} title="researcher count">Ppl.</p>
-                <p className={fieldClasses}>Score</p>
+                <p className={fieldClasses} title="research publications from this institution">Pubs.</p>
+                <p className={fieldClasses} title="published researchers from this institution">Ppl.</p>
+                {/* <p className={fieldClasses}>Score</p> */}
             </div>
             <div className="mt-20 w-full md:pr-4 md:pb-8">
                 <ListRow></ListRow>
@@ -79,7 +76,7 @@ export default function ListPanel(props) {
             </div>
             <style jsx>{`
                 .field {
-                    width: calc(40% / 3);
+                    width: calc(50% / 3);
                 }
 
                 @media (min-width: 768px) {

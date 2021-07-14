@@ -1,4 +1,5 @@
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
+import "flag-icon-css/css/flag-icon.min.css";
 import { Provider } from "next-auth/client";
 
 function MyApp({ Component, pageProps }) {

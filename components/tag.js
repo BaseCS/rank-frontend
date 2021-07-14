@@ -11,7 +11,8 @@ export default function Tag(props) {
             icon = props.content.icon;
         }
     } else if (props.type == "country") {
-        icon = <ReactCountryFlag countryCode={props.content.id} svg style={{width: '1.4rem', height: '1rem', display: "block", transform: "scale(1)"}}/>;
+        let flagID = "flag-icon-background flag-icon-" + props.content.id.toLowerCase();
+        icon = <div className={flagID + " rounded-sm"} style={{height: "1rem", width: "1.33rem", backgroundSize: "cover"}}></div>;
     }
     
 
