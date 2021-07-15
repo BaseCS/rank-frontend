@@ -103,28 +103,28 @@ export default function ControlPanel() {
             <div id="controlPanel" className={panelClasses}>
                 <Disclosure 
                 title="Show institutions by location"
-                subtitle="Filter world institutions by geography."
+                subtitle="Filter world institutions by geography"
                 show={true}>
                     <CountryFilter tags={countryList} selected={countriesSelected} onUpdate={countriesUpdate}/>
                 </Disclosure>
 
                 <Disclosure 
                 title="Publication year range"
-                subtitle="Only consider research publications within this time period (inclusive)."
+                subtitle="Only consider research publications within this time period (inclusive)"
                 show={true}>
                     <RangeFilter bounds={rangeBounds} selected={rangeSelected} onUpdate={rangeUpdate}></RangeFilter>
                 </Disclosure>
 
                 <Disclosure 
                 title="Include by categories"
-                subtitle="Only consider publications that have been tagged with the following categories."
+                subtitle="Only consider publications that have been tagged with the following categories"
                 show={true}>
                     <TagBank collapsible={false} show={true} title="Available tags" type="tag" tags={tagList} selected={tagsSelected} onUpdate={tagsUpdate}></TagBank>
                 </Disclosure>
 
                 <Disclosure 
                 title="Include by conferences"
-                subtitle="Only consider publications that were included in the following conferences."
+                subtitle="Only consider publications that were included in the following conferences"
                 show={true}>
                     <p>Hello world</p>
                 </Disclosure>

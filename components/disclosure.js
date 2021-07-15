@@ -63,7 +63,7 @@ export default function Disclosure(props) {
     `;
     const subtitleClasses = `
         text-gray-400
-        text-sm 
+        text-sm
         mb-3
     `;
 

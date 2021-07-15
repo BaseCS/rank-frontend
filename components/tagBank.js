@@ -89,7 +89,7 @@ export default function TagBank(props) {
                 {displayName}
             </div>
             <div className="h-6 -mt-6 flex flex-row justify-end">
-                <div className="flex flex-row items-center space-x-2 bg-gray-50 pl-2">
+                <div className="flex flex-row items-center space-x-2 pl-2">
                     <div className="text-sm text-gray-400">
                         <span className={"font-semibold " + (count > 0 ? "text-green-500" : "text-red-400")}>{count}</span> / {props.tags.length}
                     </div>

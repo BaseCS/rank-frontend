@@ -28,7 +28,10 @@ export default function Authentication() {
         console.log(session);
         content = <>
             <img src={session.user.image} className="h-10 w-10 rounded-full"></img>
-            <p className="flex-grow font-semibold">{session.user.name}</p>
+            <div className="flex-grow">
+                <p className="font-semibold">{session.user.name}</p>
+                <p className="text-xs italic text-gray-400">{session.user.login} # {session.user.id}</p>
+            </div>
             <button onClick={signOut} className={buttonClasses + "bg-red-500"}>
                 Sign out
             </button>

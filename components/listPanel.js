@@ -51,7 +51,7 @@ export default function ListPanel(props) {
                 <p className={titleClasses}>
                     Institution
                     &nbsp;
-                    <span className="text-sm font-normal text-gray-400 italic truncate">select one to see more</span>
+                    <span className="text-sm font-normal text-gray-400 truncate">select one to see more</span>
                 </p>
                 <p className={fieldClasses} title="research publications">Pubs.</p>
                 <p className={fieldClasses} title="published researchers">Ppl.</p>
