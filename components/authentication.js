@@ -25,6 +25,7 @@ export default function Authentication() {
     let content;
 
     if(session) {
+        console.log(session);
         content = <>
             <img src={session.user.image} className="h-10 w-10 rounded-full"></img>
             <p className="flex-grow font-semibold">{session.user.name}</p>

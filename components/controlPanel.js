@@ -44,10 +44,11 @@ export default function ControlPanel() {
         md:px-4
         md:pb-8
         divide-gray-200 
-        divide-y-2
+        divide-y
     `
 
     const headerClasses = `
+        panelHeader
         fixed
         h-16
         w-full
@@ -55,7 +56,7 @@ export default function ControlPanel() {
         backdrop-filter
         backdrop-blur
         bg-white
-        bg-opacity-80
+        bg-opacity-70
         px-4
         md:pl-7
         flex
@@ -129,6 +130,12 @@ export default function ControlPanel() {
                 </Disclosure>
             </div>
             <style jsx>{`
+                @-moz-document url-prefix() { 
+                    .panelHeader {
+                        background-color: white;
+                    }
+                }
+
                 @media (min-width: 768px) {
                     #controlSubmit {
                         width: calc(380px - 0.75rem);

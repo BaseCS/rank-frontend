@@ -31,11 +31,9 @@ export default function Home() {
         md:overflow-scroll
         md:fixed
         h-full
-
     `;
     const listViewClasses = `
     `;
-
     return(
         <>
             <Head>
@@ -50,7 +48,6 @@ export default function Home() {
                     <ControlPanel/>
                 </div>
                 <div id="listView" className={listViewClasses}>
-                    {/* <ControlPanel/> */}
                     <ListPanel/>
                 </div>
             </div>
