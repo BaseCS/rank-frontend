@@ -14,10 +14,9 @@ export default function Disclosure(props) {
         max-w-full
         md:rounded 
         overflow-hidden 
-        bg-gray-50
+        bg-gray-100
     `;
     const headerClasses = `
-        text-gray-500 
         hover:text-green-500
         group
         font-semibold
@@ -29,7 +28,7 @@ export default function Disclosure(props) {
         text-left 
         items-center 
         w-full 
-        bg-gray-100 
+        bg-gray-200 
         md:bg-transparent
     `;
     const iconWrapperClasses = `
@@ -45,21 +44,17 @@ export default function Disclosure(props) {
         h-full 
         w-full
     `;
-    const contentClasses = `
-        pb-3 
+    const newContentClasses = `
+        content
         px-4
-        md:px-3 
-        pt-3 
-        md:pt-0
-        text-gray-500
-    `;
+        md:px-3
+    ` + (show ? " py-3" : " py-0");
     const borderClasses = `
-        bg-gray-200 
-        mb-3 
+        bg-gray-300 
         h-px 
-        w-full 
         hidden 
         md:block
+        mx-3
     `;
     const subtitleClasses = `
         text-gray-400
@@ -67,29 +62,42 @@ export default function Disclosure(props) {
         mb-3
     `;
 
+    let content = <></>;
+    if (show) {
+        content = 
+        <>
+            <p className={subtitleClasses}>
+                {props.subtitle}
+            </p>
+            {props.children}
+        </>
+    }
+
     return(
-        <div className={wrapperClasses}>
-            <button onClick={toggleShow} className={headerClasses} title={show ? "show less" : "show more"}>
-                <p className="flex-grow">{props.title}</p>
-                <div className={iconWrapperClasses}>
-                    {show ?
-                        <HiChevronDown className={iconClasses + "transform rotate-180"}/>
-                        :
-                        <HiChevronDown className={iconClasses}/>
-                    }
-                </div>
-            </button>
-            {show &&
-                <div className={contentClasses}>
+        <>
+            <div className={wrapperClasses}>
+                <button onClick={toggleShow} className={headerClasses} title={show ? "show less" : "show more"}>
+                    <p className="flex-grow">{props.title}</p>
+                    <div className={iconWrapperClasses}>
+                        {show ?
+                            <HiChevronDown className={iconClasses + "transform rotate-180"}/>
+                            :
+                            <HiChevronDown className={iconClasses}/>
+                        }
+                    </div>
+                </button>
+                {show && 
                     <div className={borderClasses}/>
-                    {props.subtitle !== undefined && 
-                        <p className={subtitleClasses}>
-                            {props.subtitle}
-                        </p>
-                    }
-                    {props.children}
+                }
+                <div className={newContentClasses}>
+                    {content}
                 </div>
-            }
-        </div>
+            </div>
+            <style jsx>{`
+                .content {
+                    transition: padding-top 300ms, padding-bottom 300ms;
+                }
+            `}</style>
+        </>
     );
 }

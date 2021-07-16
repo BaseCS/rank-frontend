@@ -85,7 +85,7 @@ export default function CountryFilter(props) {
     }
 
     return(
-        <div className="space-y-3 divide-y divide-gray-200">
+        <div className="space-y-3 divide-y divide-gray-300">
             <div className="pt-0">
                 <TagBank 
                 collapsible={true} 

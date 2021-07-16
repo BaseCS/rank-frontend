@@ -13,6 +13,7 @@ export default function Tag(props) {
     } else if (props.type == "country") {
         let flagID = "flag-icon-background flag-icon-" + props.content.id.toLowerCase();
         icon = <div className={flagID + " rounded-sm"} style={{height: "1rem", width: "1.33rem", backgroundSize: "cover"}}></div>;
+        // icon = <ReactCountryFlag countryCode={props.content.id} svg style={{marginTop: "-11px", width: "21px"}}/>
     }
     
 
@@ -42,7 +43,8 @@ export default function Tag(props) {
         hover:text-green-500
         hover:shadow-md
         group
-    `;
+    ` + (props.active ? "bg-green-500" : "bg-gray-200")
+    ;
     const layoutClasses = `
         flex 
         flex-row 
@@ -59,19 +61,20 @@ export default function Tag(props) {
         rounded-sm 
         mr-2
         overflow-hidden
-    `;
+    ` + (props.active ? "text-green-500" : "")
+    ;
     const labelClasses = `
         flex-shrink-0
         text-sm
-    `;
-
+    ` + (props.active ? "text-white" : "")
+    ;
     return(
-        <button title={props.content.name} className={wrapperClasses + (props.active ? "bg-green-500" : "bg-gray-100")} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
+        <button title={props.content.name} className={wrapperClasses} onClick={toggleActive} onMouseEnter={onHoverStart} onMouseLeave={onHoverEnd}>
             <div className={layoutClasses}>
-                <div className={iconClasses + (props.active ? "text-green-500" : "")}>
+                <div className={iconClasses}>
                     {icon}
                 </div>
-                <div className={props.textDisplay + labelClasses + (props.active ? "text-white" : "")}>
+                <div className={props.textDisplay + labelClasses}>
                     {props.content.id}
                 </div>
             </div>

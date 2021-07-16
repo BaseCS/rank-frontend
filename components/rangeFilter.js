@@ -176,7 +176,7 @@ export default function RangeFilter(props) {
     `;
     const trackWrapperClasses = `
         px-4 
-        bg-gray-100 
+        bg-gray-200 
         rounded
         mb-2
     `;
@@ -185,7 +185,7 @@ export default function RangeFilter(props) {
         relative 
         w-full 
         h-4 
-        bg-gray-200  
+        bg-gray-300  
     `;
     const handleClasses = `
         h-6 
@@ -221,7 +221,7 @@ export default function RangeFilter(props) {
         mb-1
     `;
     const buttonClasses = `
-        bg-gray-500
+        bg-gray-600
         text-white
         filter
         hover:bg-green-500

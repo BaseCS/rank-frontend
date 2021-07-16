@@ -16,16 +16,16 @@ export default function Home() {
         z-50
         h-16
 
-        text-gray-500
-        backdrop-filter
-        backdrop-blur-xl
+        text-gray-600
     `;
     const contentClasses = `
+
         pt-16
         w-full 
         flex 
         flex-col 
         md:flex-row 
+        text-gray-600
     `;
     const sidebarClasses = `
         md:overflow-scroll
@@ -52,6 +52,10 @@ export default function Home() {
                 </div>
             </div>
             <style jsx>{`
+                div {
+                    // background: red;
+                }
+
                 @media (min-width: 768px) {
                     #sidebar {
                         width: calc(380px - 0.75rem);
