@@ -72,12 +72,14 @@ export default function ListRow(props) {
         text-gray-500
         group-hover:text-green-500
     `;
+    const contentClasses = `content px-4 md:px-3
+    ` + (show ? " py-3 md:pb-3 md:pt-0" : " py-0");
 
     let content = <></>;
 
     if (show) {
         content = 
-        <div className="px-4 py-3 md:px-3 md:pb-3 md:pt-0">
+        <>
             <div className="h-px bg-gray-200 mb-3 hidden md:block"></div>
             <p>Hello here be some cool graphs and such</p>
             <p>Hello here be some content</p>
@@ -85,7 +87,7 @@ export default function ListRow(props) {
             <p>Hello here be some content content</p>
             <p>Hello here be some content</p>
             <p>Hello here be some content content content</p>
-        </div>;
+        </>;
     }
 
     return(
@@ -120,7 +122,9 @@ export default function ListRow(props) {
                         </div>
                     </div>
                 </button>
-                {content}
+                <div className={contentClasses}>
+                    {content}
+                </div>
             </div>
             <style jsx>{`
                 .listRow {
@@ -137,6 +141,11 @@ export default function ListRow(props) {
 
                 .listRow:last-of-type {
                     margin-bottom: 0;
+                }
+
+                .content {
+                    transition: padding-top 150ms;
+                    transition: padding-bottom 150ms;
                 }
 
                 @media (max-width: 767px) {
