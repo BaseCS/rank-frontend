@@ -1,12 +1,18 @@
-import { IoPeople } from "react-icons/io5";
-import { FaGraduationCap, FaFileAlt } from "react-icons/fa";
 import { useState } from "react";
+import { FaGraduationCap, FaFileAlt, FaUserFriends } from "react-icons/fa";
+import ListReadout from "./listReadout";
+import ListGraph from "./listGraph";
+import ListPaperCarousel from "./listPaperCarousel";
 
 export default function ListRow(props) {
 
-    const name = "The University of North Carolina at Chapel Hill"
-    const type = "University"
-
+    const name = "The University of North Carolina State at Chapel Wilmington Hill Charlotte";
+    const type = "University";
+    const country = "US";
+    const rank = 123456;
+    const score = 123456;
+    const publications = 123456;
+    const people = 123456;
     const [show, setShow] = useState(false);
 
     function toggleShow() {
@@ -37,9 +43,9 @@ export default function ListRow(props) {
     const nameClasses = `
         text-left
         font-semibold
-        truncate
         group-hover:text-green-500
-    `;
+    ` + (show ? " leading-tight my-0.5" : " truncate")
+    ;
     const defaultFieldClasses = `
         field
         h-full
@@ -71,21 +77,53 @@ export default function ListRow(props) {
         mb-1
         group-hover:text-green-500
     `;
-    const contentClasses = `content px-4 md:px-3
+    const contentClasses = `
+        content 
+        px-4 
+        md:px-3
+        overflow-hidden
     ` + (show ? " py-3" : " py-0");
+
+    let flagID = "flag-icon-" + country.toLowerCase();
+    let flag = <div className={flagID + " flag-icon-background mr-1 rounded-sm flex-shrink-0"} style={{height: "0.9rem", width: "1.2rem", backgroundSize: "cover"}}/>;
 
     let content = <></>;
 
     if (show) {
+        const borderClasses = "bg-gray-300 h-px my-3";
+        const subTitleClasses = "mb-3";
+        const readoutData = {
+            rank: rank,
+            score: score,
+            publications: publications,
+            people: people
+        }
+        const graphData = [215, 124, 74, 61, 54, 45, 184, 14, 123, 91];
+        const graphStart = 12;
+        const paperData = [
+            {title: "Lorem Ipsum Dolor sit Amet", date: "01/23/45"},
+            {title: "Consectetur Adipiscing Elit", date: "01/23/45"},
+            {title: "Sed do Eiusmod Tempor Incididunt ut Labore", date: "01/23/45"},
+            {title: "Ut Enim ad Minim Veniam", date: "01/23/45"},
+            {title: "Quis Nostrud Exercitation Ullamco Laboris Nisi ut Aliquip ex ea Commodo Consequat", date: "01/23/45"},
+            {title: "Lorem Ipsum Dolor sit Amet", date: "01/23/45"},
+            {title: "Consectetur Adipiscing Elit", date: "01/23/45"},
+            {title: "Sed do Eiusmod Tempor Incididunt ut Labore", date: "01/23/45"},
+            {title: "Ut Enim ad Minim Veniam", date: "01/23/45"},
+            {title: "Quis Nostrud Exercitation Ullamco Laboris Nisi ut Aliquip ex ea Commodo Consequat", date: "01/23/45"}
+        ]
+
         content = 
         <>  
-            <p className="text-sm">
-                <span className="text-gray-400">10 year history for </span>
-                <span className="font-semibold">{name}</span>
-            </p>
-            <p className="font-serif">{name}</p>
-            <p className="font-semibold italic">{name}</p>
-            <p className="font-semibold italic">{name}</p>
+            <ListReadout data={readoutData}/>
+            <div className={borderClasses}/>
+            <p className={subTitleClasses}>Yearly Publication History</p>
+            <ListGraph data={graphData} start={graphStart}/>
+            <div className={borderClasses}/>
+            <p className={subTitleClasses}>Recent Publications</p>
+            <ListPaperCarousel data={paperData}/>
+            <div className={borderClasses}/>
+            <p className={subTitleClasses + " mb-0"}>People</p>
         </>;
     }
 
@@ -98,28 +136,40 @@ export default function ListRow(props) {
                             {name}
                         </p>
                         <div className="text-sm text-gray-400 flex items-center">
-                            <div className="flag-icon-background flag-icon-us mr-1 rounded-sm flex-shrink-0" style={{height: "0.9rem", width: "1.2rem", backgroundSize: "cover"}}/>
-                            <p className="pr-2 border-gray-300 border-r mr-2 flex-shrink-0">US</p>
+                            {flag}
+                            <p className="pr-2 border-gray-300 border-r mr-2 flex-shrink-0">
+                                {country}
+                            </p>
                             <FaGraduationCap className="h-5 w-5 mr-1 flex-shrink-0"/>
-                            <p className="truncate text-left">{type}</p>
+                            <p className="truncate text-left">
+                                {type}
+                            </p>
                         </div>
                     </div>
                     {!show && <>
                         <div className={countClasses}>
-                            <div className={fieldGroupClasses} title="show publications from this institution">
+                            <div className={fieldGroupClasses}>
                                 <FaFileAlt className={iconClasses}/>
-                                <span className="text-gray-400 truncate w-full">123123</span>
+                                <span className="text-gray-400 truncate w-full">
+                                    {publications}
+                                </span>
                             </div>
                         </div>
                         <div className={countClasses}>
-                            <div className={fieldGroupClasses} title="show researchers from this institutions">
-                                <IoPeople className={iconClasses}/>
-                                <span className="text-gray-400 truncate w-full">123123</span>
+                            <div className={fieldGroupClasses}>
+                                <FaUserFriends className={iconClasses}/>
+                                <span className="text-gray-400 truncate w-full">
+                                    {people}
+                                </span>
                             </div>
                         </div>
                         <div className={defaultFieldClasses}>
-                            <p className="text-green-500 font-semibold truncate w-full">123123</p>
-                            <p className="text-sm text-gray-400 truncate w-full">123123</p>
+                            <p className="text-green-500 font-semibold truncate w-full">
+                                {rank}
+                            </p>
+                            <p className="text-sm text-gray-400 truncate w-full">
+                                {score}
+                            </p>
                         </div>
                     </>}
                 </button>
@@ -137,6 +187,10 @@ export default function ListRow(props) {
 
                 .listRow + .listRow {
                     // border-top: 1px solid #D1D5DB;
+                }
+
+                .listRow:last-child {
+                    margin-bottom: 0;
                 }
 
                 .content {
@@ -160,6 +214,7 @@ export default function ListRow(props) {
 
                     .listRow:last-of-type {
                         border-bottom: 0;
+                        margin-bottom: 0;
                     }
     
                     .listRow:first-of-type {

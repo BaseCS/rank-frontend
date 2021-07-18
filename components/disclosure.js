@@ -57,6 +57,7 @@ export default function Disclosure(props) {
         mx-3
     `;
     const subtitleClasses = `
+        leading-tight
         text-gray-400
         text-sm
         mb-3

@@ -65,16 +65,17 @@ export default function TagBank(props) {
         text-center
     `;
     const defaultNameClasses = `
-        font-semibold
         h-6
         truncate
-    ` + (props.collapsible ? "mr-48" : "mr-40")
+    ` + (props.collapsible ? " mr-48" : " mr-40")
     ;
     const highlightedNameClasses = defaultNameClasses + `
+        font-semibold
         text-green-500 
         capitalize
     `;
     const defaultNameCollapsibleClasses = defaultNameClasses + `
+        hover:font-semibold
         hover:text-green-500
         select-none
         cursor-pointer

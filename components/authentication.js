@@ -44,7 +44,7 @@ export default function Authentication() {
         content = <>
             <p className="flex-grow">Not signed in</p>
             <button onClick={() => {signIn("github")}} className={buttonClasses + "bg-gray-600"}>
-                Sign in with <span className="font-semibold">GitHub </span> <FaGithub className="h-5 w-5 ml-3"/>
+                Sign in with&nbsp;<span className="font-semibold">GitHub</span> <FaGithub className="h-5 w-5 ml-3"/>
             </button>
         </>
     }

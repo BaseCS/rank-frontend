@@ -45,8 +45,7 @@ export default function ControlPanel() {
         md:pb-8
         divide-gray-300 
         divide-y
-    `
-
+    `;
     const headerClasses = `
         panelHeader
         fixed
@@ -66,7 +65,6 @@ export default function ControlPanel() {
         border-gray-200
         font-semibold
     `;
-
     const buttonClasses = `
         h-8
         px-3
@@ -81,13 +79,6 @@ export default function ControlPanel() {
         flex-row
         items-center
     `;
-
-    const iconClasses = `
-        ml-2
-        h-6
-        w-6
-    `;
-
     return(
         <>
             <div id="controlSubmit" className={headerClasses}>
@@ -96,7 +87,9 @@ export default function ControlPanel() {
                 </p>
                 <button id="submitButton" className={buttonClasses} title="apply selected filter options">
                     Apply
-                    <IoMdRefresh className={iconClasses}/>
+                    <div id="submitIcon" className="ml-2">
+                        <IoMdRefresh className="h-6 w-6"/>
+                    </div>
                 </button>
             </div>
             <div id="controlPanel" className={panelClasses}>
