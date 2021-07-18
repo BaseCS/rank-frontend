@@ -8,10 +8,10 @@ export default function ListPaperCarousel(props) {
     const wrapperClasses = `
         overflow-x-scroll
         overflow-y-hidden
-        pb-3
-        -mb-3
         -mx-4
         md:-mx-3
+        pb-3
+        -mb-3
         px-4
         md:px-3
     `;
@@ -84,12 +84,14 @@ export default function ListPaperCarousel(props) {
     }
 
     return(
-        <div className={wrapperClasses}>
-            <div className={carouselClasses}>
-                {paperGroup}
-                {/* invisible stopper to fix overflow padding issues */}
-                <div className="h-px w-px -ml-px flex-shrink-0"></div>
+        <>
+            <div className={wrapperClasses}>
+                <div className={carouselClasses}>
+                    {paperGroup}
+                    {/* invisible stopper to fix overflow padding issues */}
+                    <div className="h-1 w-1 md:-ml-1 flex-shrink-0 opacity-0"></div>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
