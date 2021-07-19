@@ -3,13 +3,14 @@ import { FaGraduationCap, FaFileAlt, FaUserFriends } from "react-icons/fa";
 import ListReadout from "./listReadout";
 import ListGraph from "./listGraph";
 import ListPaperCarousel from "./listPaperCarousel";
+import ListPeopleCarousel from "./listPeopleCarousel";
 
 export default function ListRow(props) {
 
-    const name = "The University of North Carolina State at Chapel Wilmington Hill Charlotte";
+    const name = "EMESCAM - Escola Superior de Ciências da Santa Casa de Misericórdia de Vitória";
     const type = "University";
     const country = "US";
-    const rank = 123456;
+    const rank = 1;
     const score = 123456;
     const publications = 123456;
     const people = 123456;
@@ -20,6 +21,7 @@ export default function ListRow(props) {
     }
 
     const wrapperClasses = `
+        overflow-hidden
         listRow
         w-full
         md:rounded
@@ -111,19 +113,51 @@ export default function ListRow(props) {
             {title: "Sed do Eiusmod Tempor Incididunt ut Labore", date: "01/23/45"},
             {title: "Ut Enim ad Minim Veniam", date: "01/23/45"},
             {title: "Quis Nostrud Exercitation Ullamco Laboris Nisi ut Aliquip ex ea Commodo Consequat", date: "01/23/45"}
+        ];
+        const peopleData = [
+            {name: "Ketan Meyer-Patel"},
+            {name: "Mohit Bansal"},
+            {name: "Jan-Michael Frahm"},
+            {name: "Samarjit Chakraborty"},
+            {name: "Ron Alterovitz"},
+            {name: "James H. Anderson"},
+            {name: "Michael K. Reiter"},
+            {name: "Dinggang Shen"},
+            {name: "Henry Fuchs"},
+            {name: "Marc Niethammer"},
+            {name: "Junier B. Oliva"},
+            {name: "Shashank Srivastava"},
+            {name: "Snigdha Chaturvedi"},
+            {name: "Fabian Monrose"},
+            {name: "Colin Raffel"},
+            {name: "David Gotz"},
+            {name: "Shahriar Nirjon"},
+            {name: "Parasara Sridhar Duggirala"},
+            {name: "Donald E. Porter"},
+            {name: "Quoc Tran-Dinh"},
+            {name: "Cynthia Sturton"},
+            {name: "Leonard McMillan"},
+            {name: "Montek Singh"},
         ]
 
         content = 
         <>  
             <ListReadout data={readoutData}/>
+
             <div className={borderClasses}/>
+
             <p className={subTitleClasses}>Yearly Publication History</p>
             <ListGraph data={graphData} start={graphStart}/>
+
             <div className={borderClasses}/>
+
             <p className={subTitleClasses}>Recent Publications</p>
             <ListPaperCarousel data={paperData}/>
+
             <div className={borderClasses}/>
-            <p className={subTitleClasses + " mb-0"}>People</p>
+
+            <p className={subTitleClasses}>Affiliated People</p>
+            <ListPeopleCarousel data={peopleData}/>
         </>;
     }
 

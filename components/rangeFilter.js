@@ -297,7 +297,7 @@ export default function RangeFilter(props) {
                     {scaleUI}
                 </div>
             </div>
-            <div className="flex flex-row text-sm text-gray-400">
+            <div className="flex flex-row text-xs text-gray-400">
                 <p className="flex-grow text-left">
                     {props.bounds.start}
                 </p>

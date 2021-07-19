@@ -41,7 +41,7 @@ export default function ListPanel(props) {
         <>
             <div id="listHeader" className={headerClasses}>
                 <p className={titleClasses}>
-                    Institution
+                    Institutions
                     &nbsp;
                     <span className="text-sm font-normal text-gray-400 truncate">select one to see more</span>
                 </p>

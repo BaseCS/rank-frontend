@@ -21,7 +21,7 @@ export default function ListPaperCarousel(props) {
     `;
     const paperClasses = `
         mr-3
-        rounded
+        rounded-sm
         bg-white
         shadow-md
         flex-shrink-0
@@ -29,9 +29,10 @@ export default function ListPaperCarousel(props) {
         w-24
         overflow-hidden
         p-2
+        hover:text-green-500
     `;
     const paperTitleClasses = `
-        text-xs
+        text-center
         font-serif
         h-full
         w-full
@@ -45,7 +46,7 @@ export default function ListPaperCarousel(props) {
         h-10
         z-10 
         relative
-        rounded-b
+        rounded-b-sm
     `;
     const paperGradientClasses = `
         h-8 
@@ -63,10 +64,10 @@ export default function ListPaperCarousel(props) {
         // let titleFirst = title[0].toUpperCase();
         // let titleSubstr = title.substring(1, title.length);
         let paper = 
-            <div key={i} className={paperClasses}>
+            <button key={i} className={paperClasses}>
                 {/* {papers[i].title} */}
-                <p className={paperTitleClasses}>
-                    {/* <span className="text-base leading-tight font-semibold">{titleFirst}</span>{titleSubstr} */}
+                <p className={paperTitleClasses} style={{fontSize: "0.6rem"}}>
+                    {/* <span className="text-xs leading-tight font-semibold">{titleFirst}</span>{titleSubstr} */}
                     {title}
                 </p>
                 <div className={paperGradientClasses}/>
@@ -79,7 +80,7 @@ export default function ListPaperCarousel(props) {
                         <BiCalendar/>&nbsp;{papers[i].date}
                     </p>
                 </div>
-            </div>
+            </button>
         paperGroup.push(paper);
     }
 
@@ -91,6 +92,11 @@ export default function ListPaperCarousel(props) {
                     {/* invisible stopper to fix overflow padding issues */}
                     <div className="h-1 w-1 md:-ml-1 flex-shrink-0 opacity-0"></div>
                 </div>
+            </div>
+            <div className="relative z-20 -mb-3 -mx-4 md:-mx-3 pointer-events-none hidden md:flex flex-row" style={{height: "9.5rem", marginTop: "-9.5rem"}}>
+                <div className="bg-gradient-to-r from-gray-100 w-4 md:w-3 h-full"></div>
+                <div className="flex-grow"></div>
+                <div className="bg-gradient-to-l from-gray-100 w-4 md:w-3 h-full"></div>
             </div>
         </>
     );

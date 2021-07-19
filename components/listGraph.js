@@ -36,7 +36,7 @@ export default function ListGraph(props) {
     }
 
     const legendClasses = `
-        text-sm
+        text-xs
         text-gray-400
         truncate
         text-center
