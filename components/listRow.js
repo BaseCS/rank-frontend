@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaGraduationCap, FaFileAlt, FaUserFriends } from "react-icons/fa";
 import ListReadout from "./listReadout";
 import ListGraph from "./listGraph";
-import ListPaperCarousel from "./listPaperCarousel";
 import SideScroll from "./sideScroll";
 import PersonCard from "./personCard";
 import PaperCard from "./paperCard";

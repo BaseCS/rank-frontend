@@ -2,8 +2,23 @@ import Head from "next/head";
 import Authentication from "../components/authentication";
 import ControlPanel from "../components/controlPanel";
 import ListPanel from "../components/listPanel";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Home() {
+
+    const [institutionList, setInstitutions] = useState([]);
+
+    function test() {
+        const api_url = process.env.API_URL;
+        axios.get("http://localhost:3000" + "/institutions").then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    test();
 
     const headerClasses = `
         w-screen 
@@ -37,8 +52,7 @@ export default function Home() {
     return(
         <>
             <Head>
-                <title>Dank Rank</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title>Open Rank</title>
             </Head>
             <div id="header" className={headerClasses}>
                 <Authentication/>
@@ -48,7 +62,7 @@ export default function Home() {
                     <ControlPanel/>
                 </div>
                 <div id="listView" className={listViewClasses}>
-                    <ListPanel/>
+                    <ListPanel institutions={institutionList}/>
                 </div>
             </div>
             <style jsx>{`
