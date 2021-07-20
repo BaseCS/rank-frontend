@@ -3,7 +3,9 @@ import { FaGraduationCap, FaFileAlt, FaUserFriends } from "react-icons/fa";
 import ListReadout from "./listReadout";
 import ListGraph from "./listGraph";
 import ListPaperCarousel from "./listPaperCarousel";
-import ListPeopleCarousel from "./listPeopleCarousel";
+import SideScroll from "./sideScroll";
+import PersonCard from "./personCard";
+import PaperCard from "./paperCard";
 
 export default function ListRow(props) {
 
@@ -85,6 +87,11 @@ export default function ListRow(props) {
         md:px-3
         overflow-hidden
     ` + (show ? " py-3" : " py-0");
+    const borderClasses = `
+        bg-gray-300 
+        h-px 
+        my-3`;
+    const subTitleClasses = "mb-3";
 
     let flagID = "flag-icon-" + country.toLowerCase();
     let flag = <div className={flagID + " flag-icon-background mr-1 rounded-sm flex-shrink-0"} style={{height: "0.9rem", width: "1.2rem", backgroundSize: "cover"}}/>;
@@ -92,8 +99,6 @@ export default function ListRow(props) {
     let content = <></>;
 
     if (show) {
-        const borderClasses = "bg-gray-300 h-px my-3";
-        const subTitleClasses = "mb-3";
         const readoutData = {
             rank: rank,
             score: score,
@@ -102,7 +107,7 @@ export default function ListRow(props) {
         }
         const graphData = [215, 124, 74, 61, 54, 45, 184, 14, 123, 91];
         const graphStart = 12;
-        const paperData = [
+        const paperList = [
             {title: "Lorem Ipsum Dolor sit Amet", date: "01/23/45"},
             {title: "Consectetur Adipiscing Elit", date: "01/23/45"},
             {title: "Sed do Eiusmod Tempor Incididunt ut Labore", date: "01/23/45"},
@@ -114,7 +119,7 @@ export default function ListRow(props) {
             {title: "Ut Enim ad Minim Veniam", date: "01/23/45"},
             {title: "Quis Nostrud Exercitation Ullamco Laboris Nisi ut Aliquip ex ea Commodo Consequat", date: "01/23/45"}
         ];
-        const peopleData = [
+        const peopleList = [
             {name: "Ketan Meyer-Patel"},
             {name: "Mohit Bansal"},
             {name: "Jan-Michael Frahm"},
@@ -152,12 +157,24 @@ export default function ListRow(props) {
             <div className={borderClasses}/>
 
             <p className={subTitleClasses}>Recent Publications</p>
-            <ListPaperCarousel data={paperData}/>
+            <SideScroll height="8rem">
+                {paperList.map((paper, index)=>{
+                    return(
+                        <PaperCard key={index} data={paper}/>
+                    );
+                })}
+            </SideScroll>
 
             <div className={borderClasses}/>
 
             <p className={subTitleClasses}>Affiliated People</p>
-            <ListPeopleCarousel data={peopleData}/>
+            <SideScroll height="3.25rem">
+                {peopleList.map((person, index) => {
+                    return(
+                        <PersonCard key={index} data={person}/>
+                    );
+                })}
+            </SideScroll>
         </>;
     }
 
