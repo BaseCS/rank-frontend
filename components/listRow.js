@@ -8,7 +8,7 @@ import PaperCard from "./paperCard";
 
 export default function ListRow(props) {
 
-    const name = "EMESCAM - Escola Superior de Ciências da Santa Casa de Misericórdia de Vitória";
+    const name = "The University of North Carolina at Chapel Hill";
     const type = "University";
     const country = "US";
     const rank = 1;
